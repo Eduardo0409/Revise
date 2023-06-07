@@ -43,14 +43,23 @@
   <table border="1">
     <tr>
       <th>Tipo</th>
-      <th>Marca</th>
+      <th>Marca/Modelo</th>
       <th>Ano</th>
+      <th>Status</th>
       <th>Remover</th>
     </tr>
     <tr *ngFor="let item of list | async">
       <td>{{ item.tipo }}</td>
       <td>{{ item.marcaModelo }}</td>
       <td>{{ item.ano }}</td>
+      <td>
+        <ng-container *ngIf="item.ano <= 2; else trocaUrgente"
+          >Não é necessário a troca</ng-container
+        >
+        <ng-template #trocaUrgente
+          >Precisa realizar a troca urgentemente</ng-template
+        >
+      </td>
       <td>
         <button (click)="deleteItem(item.key)">Deletar</button>
       </td>
