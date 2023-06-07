@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PecasComponent } from './pecas/pecas.component';
+import { VerificacaoComponent } from './verificacao/verificacao.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { PecasComponent } from './pecas/pecas.component';
     RouterModule.forRoot([
       { path: 'cadastro', component: CadastroComponent },
       { path: 'pecas', component: PecasComponent },
+      { path: 'verificacao', component: VerificacaoComponent },
     ]),
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyDgemol9u4nSBU9i71yIbHyirCoYL8hgcI',
@@ -41,6 +43,7 @@ import { PecasComponent } from './pecas/pecas.component';
     CadastroComponent,
     NavbarComponent,
     PecasComponent,
+    VerificacaoComponent,
   ],
   bootstrap: [RootComponent],
   providers: [AuthService],
